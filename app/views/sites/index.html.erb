@@ -1,0 +1,24 @@
+<table class="authors-table sortable table table-striped">
+	<thead class="author-table-head">
+		<tr>
+			<th style="text-align:center;">Site Name</th>
+			<th style="text-align:center;">Address</th>
+			<th style="text-align:center;">Number of Links</th>
+			<th style="text-align:center;">Remove Site</th>
+			
+			
+		</tr>
+	</thead>
+	<tbody>
+		<% @sites.each do |site| %>
+		<tr>
+			<td class="center-me"><%= site.name %></td>
+			<td class="center-me"><%= link_to site.address %> </td>
+			<td class="center-me"><%= site.links.length %></td>
+			<td class="center-me"> <%= button_to 'X', {:controller => :sites, 																									   									 	 :action => "destroy", id: site.id}, 																				 									   class: "btn btn-danger btn-xs",
+			 												 									 :method => :delete, data: { confirm: 'Are you sure you want to remove this site?' } %> 
+			</td>
+		</tr>
+		<% end %>
+	</tbody>
+</table>

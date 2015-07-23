@@ -1,0 +1,143 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+ *, *:after, *:before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: ;
+}
+
+ body {
+ 	font-family: ;
+ 	background-color: silver;
+}
+
+
+#nav-colapse {
+  display: none;
+}
+
+#navbar {
+  position: fixed;
+  width: 100vw;
+  height: 100px;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 1;
+}
+
+.logo-txt {
+	float: left;
+	display: inline;
+	width: 40%;
+	font-size: 3vw;
+	margin-left: 1vw;
+	margin-top: 30px;
+	color: grey;
+}
+
+.logo-img {
+	height: auto;
+	width: 60px;
+	float: left;
+	margin-top: 10px;
+	margin-left: 10px;
+
+}
+
+nav {
+  display: inline;
+  float: right;
+}
+nav ul {
+  list-style: none;
+  margin-top: 3.5vh;
+  cursor: pointer;
+  color: white;
+}
+nav ul li {
+	float: right;
+  display: inline;
+  padding: 10px;
+  border-radius: 5px;
+  background: #C91805;
+  color: white;
+  margin-right: 1vw;
+
+}
+nav ul li:hover {
+  background: silver;
+  color: #fff;
+}
+
+nav ul li a:link {
+	color: white;
+	text-decoration: none;
+}
+
+nav ul li a:visited {
+	color: white;
+	text-decoration: none;
+}
+
+nav ul li a:hover {
+	color: gray;
+}
+
+nav ul li a:active {
+	color: #fff;
+}
+
+.buffer {
+	width: 100%;
+	height: 130px;
+}
+
+.authors-table {
+	background-color: rgba(155,155,155,0.7);
+	width: 90%;
+	margin-left: 5vw;
+}
+
+.authors-table a {
+	color: black;
+	text-decoration: underline;
+}
+
+.authors-table a:hover {
+	color: silver;
+	text-decoration: underline;
+}
+
+.authors-table a:clicked {
+	color: black;
+	text-decoration: underline;
+}
+.author-table-head {
+	background-color: black;
+	color: white;
+	text-align: center;
+}
+
+.center-me {
+	text-align: center;
+}
+
+.t-field1 {
+	
+	/*margin-left: 10px;*/
+	width: 200px;
+}

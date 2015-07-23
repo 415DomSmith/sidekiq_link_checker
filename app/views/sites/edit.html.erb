@@ -1,0 +1,17 @@
+<h1>Edit a New Site</h1>
+
+<div class="new-form">
+    <% if @site.errors.any? %>
+        <% @site.errors.full_messages.each do |error| %>
+            <p style="color:red;"> <%= error %> </p>
+        <% end %>
+    <% end %>
+
+    <%= form_for @site do |f| %>
+        <div>
+            <%= f.label :search %>
+            <%= f.text_field :search, class: "t-field1" %>
+        </div>
+        <%= f.submit "Search", class: "btn btn-default btn-danger" %>
+    <% end %>
+</div>

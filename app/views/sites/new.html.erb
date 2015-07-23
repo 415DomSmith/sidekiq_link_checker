@@ -1,0 +1,21 @@
+<h1>Check a New Site</h1>
+
+<div class="new-form">
+    <% if @site.errors.any? %>
+    	<% @site.errors.full_messages.each do |error| %>
+    		<p style="color:red;"> <%= error %> </p>
+    	<% end %>
+    <% end %>
+<h4>Enter a site address to check it's links</h4>
+    <%= form_for @site do |f| %>
+        <div>
+            <%= f.label :name %>
+            <%= f.text_field :name, class: "t-field1" %>
+        </div>
+        <div>
+            <%= f.label :address %>
+            <%= f.text_field :address, class: "t-field1" %>
+        </div>
+        <%= f.submit "Add Site", class: "btn btn-default btn-danger" %>
+    <% end %>
+</div>
