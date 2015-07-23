@@ -10,6 +10,10 @@ class SitesController < ApplicationController
   end
 
   def create
+
+    url = site_params["address"]
+    links_arr = find_links(url)
+
   	@site = Site.new(site_params)
   	if @site.save
   		redirect_to sites_path, flash: {success: "SITE ADDED, CHECKING LINKS"}
@@ -46,5 +50,17 @@ class SitesController < ApplicationController
   	def site_params
   		params.require(:site).permit(:name, :address)
   	end
+
+    def find_links(url)
+      response = RestClient.get url, :user_agent => 'Chrome'
+      page = Nokogiri::HTML(response)
+      links_array = []
+      links = page.css('a')
+      links.each do |link|
+      href = link.attr('href')
+      links_array << href
+    end
+      links_array
+    end
 
 end
